@@ -1,0 +1,17 @@
+name: Use case or feature
+description: Describe the workflow and the evidence that a change would help
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What workflow is blocked?
+      description: Describe the consumer, server, and upgrade or testing problem.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: What would success look like?
+      description: A small example is more helpful than a large feature list.
+    validations:
+      required: true

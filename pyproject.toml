@@ -1,0 +1,47 @@
+[build-system]
+requires = ["hatchling>=1.26,<2"]
+build-backend = "hatchling.build"
+
+[project]
+name = "mcp-witness"
+version = "0.1.0"
+description = "Turn recorded MCP tool calls into offline, evidence-based contract regression tests."
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+authors = [{name = "shyangar"}]
+keywords = ["mcp", "agents", "regression-testing", "json-schema", "contract-testing"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Environment :: Console",
+  "Intended Audience :: Developers",
+  "Programming Language :: Python :: 3",
+  "Topic :: Software Development :: Testing",
+]
+dependencies = ["jsonschema>=4.23,<5", "referencing>=0.35,<0.40"]
+
+[project.optional-dependencies]
+capture = ["mcp>=1.20,<2"]
+dev = ["pytest>=8.3,<10", "pytest-cov>=6,<8", "ruff>=0.11,<1", "build>=1.2,<2"]
+
+[project.scripts]
+mcp-witness = "mcp_witness.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/shyangar/mcp-witness"
+Repository = "https://github.com/shyangar/mcp-witness"
+Issues = "https://github.com/shyangar/mcp-witness/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/mcp_witness"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]

@@ -1,0 +1,30 @@
+name: Contract regression or bug
+description: Report a reproducible failure with sanitized inputs
+body:
+  - type: markdown
+    attributes:
+      value: >-
+        Please use synthetic data. Do not include credentials, private traces,
+        customer data, or a security exploit in a public issue. See SECURITY.md
+        for private vulnerability reporting.
+  - type: input
+    id: version
+    attributes:
+      label: MCP Witness version and Python / OS
+      placeholder: '0.1.0, Python 3.13, Windows 11'
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Minimal reproduction
+      description: Include command, old/new schemas and a sanitized case if possible.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected and actual result
+      description: Include exit code and report; avoid private argument values.
+    validations:
+      required: true
