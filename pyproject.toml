@@ -22,7 +22,7 @@ dependencies = ["jsonschema>=4.23,<5", "referencing>=0.35,<0.40"]
 
 [project.optional-dependencies]
 capture = ["mcp>=1.20,<2"]
-dev = ["pytest>=8.3,<10", "pytest-cov>=6,<8", "ruff>=0.11,<1", "build>=1.2,<2"]
+dev = ["pytest>=9.2.0,<10", "pytest-cov>=6,<8", "ruff>=0.11,<1", "build>=1.2,<2"]
 
 [project.scripts]
 mcp-witness = "mcp_witness.cli:main"
